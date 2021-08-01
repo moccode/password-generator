@@ -9,9 +9,79 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+
+    <div class="app">
+
+        <h2>Password Generator</h2>
+
+        <div class="pw-head">
+            <input type="text" id="passwordOutput" value="ADkjbn\azd8499ééczeq&é'-__é">
+            <button id="copy">
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+
+        <div class="pw-length">
+            <label for="length">
+                Length :
+                <input type="text" id="display-length" value="16" readonly>
+            </label>
+            <input type="range" id="length" min="4" max="28" value="16"
+                oninput="document.getElementById('display-length').value=this.value">
+        </div>
+
+        <div class="pw-settings">
+            <input type="checkbox" id="lower" checked>
+            <label for="lower">
+                <div class="characters">
+                    a - z
+                </div>
+                <div class="title">
+                    Lowercase
+                </div>
+            </label>
+
+            <input type="checkbox" id="upper">
+            <label for="upper">
+                <div class="characters">
+                    A - Z
+                </div>
+                <div class="title">
+                    Uppercase
+                </div>
+            </label>
+
+            <input type="checkbox" id="number">
+            <label for="number">
+                <div class="characters">
+                    0 - 9
+                </div>
+                <div class="title">
+                    Numbers
+                </div>
+            </label>
+
+            <input type="checkbox" id="symbol">
+            <label for="symbol">
+                <div class="characters">
+                    ! - ?
+                </div>
+                <div class="title">
+                    Symbols
+                </div>
+            </label>
+
+        </div>
+
+        <button id="generateButton">GENERATE PASSWORD</button>
+    </div>
+
 
     <!-- SCRIPT -->
     <script src="./script.js"></script>
