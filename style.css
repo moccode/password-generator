@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --color-one: #f5f5f5;
+  --color-two: #222831;
+  --color-three: #393e46;
+  --color-white: #ffffff;
+  --color-gray: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  /* border: 1px solid red; */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1rem;
+  background-color: var(--color-one);
+  color: var(--color-white);
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.app {
+  width: 350px;
+  height: auto;
+  background-color: var(--color-two);
+  padding: 20px;
+  display: grid;
+  grid-gap: 20px;
+}
+
+/* pw-head */
+.pw-head {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  height: 40px;
+  position: relative;
+}
+
+.pw-head #password-output {
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  font-size: 1rem;
+  background-color: var(--color-three);
+  color: var(--color-white);
+}
+
+.pw-head #copy {
+  border: none;
+  outline: none;
+  background-color: var(--color-three);
+  color: var(--color-gray);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.pw-head #copy i {
+  font-size: 20px;
+}
+
+.pw-head #copy:hover {
+  color: var(--color-white);
+}
+/* end pw-head */
+
+/* pw-length */
+.pw-length {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 10px;
+  font-size: 14px;
+}
+
+.pw-length label {
+  color: var(--color-gray);
+}
+
+.pw-length label #display-length {
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--color-white);
+  outline: none;
+  border: none;
+}
+
+.pw-length #length {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--color-gray);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.pw-length #length::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.pw-length #length::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+/* end pw-length */
+
+/* pw-settings */
+.pw-settings {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  grid-gap: 10px;
+  user-select: none;
+}
+
+.pw-settings input {
+  display: none;
+}
+
+.pw-settings label {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 1px solid transparent;
+  background-color: var(--color-three);
+  color: var(--color-gray);
+  padding: 5px 0px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.pw-settings label .characters {
+  font-weight: bold;
+}
+
+.pw-settings label .title {
+  font-size: 14px;
+}
+
+.pw-settings label::before {
+  content: "✓";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 15px;
+  width: 15px;
+  background-color: var(--color-white);
+  color: var(--color-two);
+  border-radius: 50%;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: bolder;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 200ms ease-in-out;
+}
+
+.pw-settings input:checked + label {
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.pw-settings input:checked + label::before {
+  opacity: 1;
+  transform: scale(1);
+}
+/* end pw-settings */
+
+/* generateButton */
+#generateButton {
+  outline: none;
+  background-color: var(--color-three);
+  border: 1px solid transparent;
+  color: var(--color-white);
+  height: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 200ms ease-in-out;
+}
+
+#generateButton:hover {
+  border: 1px solid var(--color-white);
+}
+/* end generateButton */
